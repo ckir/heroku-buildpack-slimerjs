@@ -14,6 +14,7 @@ SLIMERJS_BINARIES_URL=http://download.slimerjs.org/releases/${VERSION}/${SLIMERJ
 XVFB_BINARIES_URL=https://raw.githubusercontent.com/ckir/heroku-buildpack-slimerjs/master/xvfb.tar.gz
 
 echo "-----> Fetching and extracting SlimerJS binaries"
+mkdir -p $CACHE_DIR
 mkdir -p $BUILD_DIR/vendor
 curl -s $SLIMERJS_BINARIES_URL | tar xj -C $CACHE_DIR
 mv $CACHE_DIR/$SLIMERJS_ARCHIVE_NAME $BUILD_DIR/vendor/slimerjs
